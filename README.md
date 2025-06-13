@@ -19,8 +19,6 @@ Tujuan dari proyek ini adalah sebagai berikut:
 - Mengembangkan sistem yang mampu memberikan rekomendasi buku kepada pengguna dengan memanfaatkan data rating yang telah diberikan sebelumnya, menggunakan pendekatan Collaborative Filtering.
 
 ### Solution Statement
-Berikut parafrase kalimat tersebut dengan gaya yang lebih formal dan terstruktur:
-
 Solusi yang dirancang dalam proyek ini adalah penerapan metode [Collaborative Filtering](https://developers.google.com/machine-learning/recommendation/collaborative/basics), yang digunakan untuk menghasilkan rekomendasi berdasarkan pola kesamaan preferensi antar pengguna.
 
 
@@ -42,7 +40,8 @@ Solusi yang dirancang dalam proyek ini adalah penerapan metode [Collaborative Fi
 
 ## Data Understanding
 
-![Book Recommendation Dataset](https://i.postimg.cc/0Q4fcMDB/rsz-bookrecommendationdataset.jpg)
+
+![Screenshot 2025-06-13 211545](https://github.com/user-attachments/assets/4492d126-beca-4f9c-8942-a69462cd86c8)
 
 Informasi Dataset:
 
@@ -73,7 +72,8 @@ Pada berkas `Ratings.csv` memuat data rating buku yang diberikan oleh pengguna. 
  - `ISBN` : berisi kode ISBN buku yang diberi rating oleh pengguna
  - `Book-Rating` : berisi nilai rating yang diberikan oleh pengguna berkisar antara 0-10
 
-![Cuplikan Data Rating](https://i.postimg.cc/wB2m0Qnc/Screenshot-39.png)
+![Screenshot 2025-06-14 062524](https://github.com/user-attachments/assets/8a2d40e6-5f98-4723-bfd2-46e573fc7fb7)
+
 
 Pada data `Rating` ini juga ditemukan bahwa `User-ID` berupa ID angka yang berukuran cukup besar. Lalu `ISBN` merupakan string unik identitas buku gabungan angka dan huruf. Kedua nilai ini nantinya perlu dilakukan encoding agar dapat menghasilkan rekomendasi. Data rating ini juga merupakan data utama dalam membuat sistem rekomendasi dengan Collaborative Filtering pada proyek ini.
   
@@ -85,7 +85,9 @@ Pada berkas `Users.csv` memuat data pengguna. Data ini terdiri dari 278.858 bari
 
 Berikut ini adalah hasil dari visualiasi jumlah rating buku yang diberikan oleh user.
 
-![Jumlah Rating Buku yang Diberikan Pengguna](https://i.postimg.cc/fRVVsh3F/Screenshot-38.png)
+
+![Screenshot 2025-06-14 062738](https://github.com/user-attachments/assets/2843a1f4-7226-4c91-ace8-3490655e72c4)
+
 
 Pada diagram visualisasi di atas dapat diketahui bahwa mayoritas user - ada lebih dari 700 ribu yang memberikan rating 0 pada buku sehingga data ini dikatakan tidak seimbang *(imbalance)*. Untuk itu pada data ini nantinya akan dilakukan penanganan agar dapat lebih seimbang.
 
@@ -111,12 +113,14 @@ Model ini juga di-compile dengan fungsi loss binarycrossentropy dan menggunakan 
 
 Model yang telah dibuat dapat menghasilkan top-10 rekomendasi buku seperti yang ditunjukkan berikut ini.
 
-![Top-10 Book Recommendation](https://i.postimg.cc/zBDrZvck/Top-10-Recommendation.png)
+![Screenshot 2025-06-14 063220](https://github.com/user-attachments/assets/40f53115-833c-4b3c-933d-a4172b8d607e)
+
+
 
 ## Evaluation
 Pada proyek ini menggunakan metrik RMSE (Root Mean Square Error) untuk mengevaluasi kinerja model yang dihasilkan. RMSE adalah cara standar untuk mengukur kesalahan model dalam memprediksi data kuantitatif [[2](https://towardsdatascience.com/what-does-rmse-really-mean-806b65f2e48e)]. Root Mean Squared Error (RMSE) mengevaluasi model regresi linear dengan mengukur tingkat akurasi hasil perkiraan suatu model. RMSE dihitung dengan mengkuadratkan error (prediksi – observasi) dibagi dengan jumlah data (= rata-rata), lalu diakarkan. Perhitungan RMSE ditunjukkan pada rumus berikut ini.
 
-![RMSE](https://i.postimg.cc/tgjfntZk/RMSE.png)
+![Screenshot 2025-06-14 063547](https://github.com/user-attachments/assets/d5e1b713-0e8c-4a7a-955e-d200b183fc5a)
 
 `RMSE` = nilai root mean square error
 
@@ -132,7 +136,8 @@ Nilai RMSE rendah menunjukkan bahwa variasi nilai yang dihasilkan oleh suatu mod
 
 Berikut ini adalah plot metrik RMSE setelah proses pelatihan model.
 
-![Model Metrics](https://i.postimg.cc/m2n2YY5W/Model-Metrics.png)
+![Screenshot 2025-06-14 064331](https://github.com/user-attachments/assets/94760999-937c-46cd-9235-88271053df31)
+
 
 Pada plot di atas dapat diketahui bahwa model memiliki skor nilai RMSE sebesar 0.185 yang mana bisa dikatakan sudah cukup bagus. Namun, meskipun begitu masih dapat dikembangkan lebih lanjut untuk meminimalkan error.
 
